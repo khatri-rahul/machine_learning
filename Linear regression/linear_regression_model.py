@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import sklearn.linear_model as linear_model
+import sklearn.neighbors as neighbors
 
 
 # Read the csv and excel files
@@ -33,13 +34,15 @@ y = np.c_[country_data['Value']]
 #visualize the original data
 #country_data.plot(kind='scatter',x='gdp',y='Value')
 
-####
 #select a linear model
 model = linear_model.LinearRegression()
 
+### Seect K-nearest neighbour method
+#model = neighbors.KNeighborsRegressor(n_neighbors=3)
 
 
-#Train the model
+
+######Train the model
 model.fit(x,y)
 
 # Make an numpy array of data to predict the model
